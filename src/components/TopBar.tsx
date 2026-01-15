@@ -1,0 +1,24 @@
+import { Phone, Mail } from "lucide-react";
+
+export default function TopBar() {
+  return (
+    <div className="hidden lg:flex items-center bg-[#432719] text-white text-sm px-6 py-2 justify-around">
+      {/* Left */}
+      <div className="flex items-center gap-6">
+        <span className="flex items-center gap-2">
+          <Phone size={14} />
+          313-931-3070
+        </span>
+        <span className="flex items-center gap-2">
+          <Mail size={14} />
+          desertinalaska@outlook.com
+        </span>
+      </div>
+
+      {/* Right */}
+      <div>
+        Mon – Sat, 8:00 AM – 6:00 PM
+      </div>
+    </div>
+  );
+}
