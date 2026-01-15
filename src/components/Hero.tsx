@@ -53,21 +53,21 @@ to-[hsl(210_25%_30%)]/70
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="rounded-md bg-[#8b5428] px-8 py-4 text-sm font-semibold text-white hover:bg-[#73431f] transition"
+                className="rounded-md font-serif bg-[#8b5428] px-8 py-4 text-sm font-semibold text-white hover:bg-[#73431f] transition"
               >
                 Request Service
               </Link>
 
               <Link
                 href="/quote"
-                className="rounded-md border border-white/60 px-8 py-4 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
+                className="rounded-md font-serif border border-white/60 px-8 py-4 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
               >
                 Request Quote
               </Link>
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-8 text-sm text-white/80">
+            <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-8 text-sm text-white/80 font-serif">
               <div className="flex items-center gap-2">
                 <IoShieldOutline className="text-lg" />
                 <span>Licensed & Insured</span>

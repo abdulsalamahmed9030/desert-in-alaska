@@ -17,14 +17,14 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-black/10">
+    <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
 
-          {/* LOGO ONLY */}
+          {/* LOGO */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"   // put your logo here
+              src="/logo.png"
               alt="Desert in Alaska"
               width={160}
               height={50}
@@ -32,7 +32,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* DESKTOP NAV (>=1024px) */}
+          {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-8 font-serif">
             {navLinks.map((link) => (
               <Link
@@ -52,7 +52,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* MOBILE MENU BUTTON (<1024px) */}
+          {/* MOBILE BUTTON */}
           <button
             className="lg:hidden font-serif"
             onClick={() => setOpen(!open)}
@@ -63,7 +63,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU (<1024px) */}
+      {/* MOBILE MENU */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-96" : "max-h-0"
