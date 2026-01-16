@@ -1,6 +1,7 @@
 import ContactBar from '@/components/ContactBar';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Services from '@/components/Services';
 import TopBar from '@/components/TopBar';
 
 export default function Page() {
@@ -10,6 +11,7 @@ export default function Page() {
       <Header />
       <Hero />
       <ContactBar />
+      <Services />
       
     </>
   );
