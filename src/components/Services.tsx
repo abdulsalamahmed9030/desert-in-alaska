@@ -96,8 +96,8 @@ export default function Services() {
           <p className="text-xs uppercase tracking-widest text-[#8b5428] font-serif">
             What We Do
           </p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-medium text-[#3b2a1f]">
-            Our Services
+          <h2 className="mt-3 text-4xl md:text-5xl font-medium text-[#3b2a1f] font-sans-400">
+            OUR SERVICES
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[#6b5a4d] font-serif">
             Comprehensive fire safety, HVAC, and mechanical services for
