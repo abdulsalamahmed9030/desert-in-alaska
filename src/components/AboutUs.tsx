@@ -68,9 +68,9 @@ export default function AboutUs() {
             About Us
           </p>
 
-          <h2 className="mt-4 text-6xl leading-[1.03] text-[#432719] font-sans">
-            Decades of Trusted <br />
-            <span className="text-[#86522d]">Expertise</span>
+          <h2 className="mt-4 text-5xl leading-[1.01] text-[#432719] font-sans">
+            DECADES OF TRUSTED  <br />
+            <span className="text-[#86522d]">EXPERTISE</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-[#6b5a4d] font-serif leading-relaxed">
