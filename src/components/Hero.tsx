@@ -1,14 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { IoShieldOutline, IoTimeOutline } from "react-icons/io5";
 import { PiMedalThin } from "react-icons/pi";
+import { useInView } from "@/hooks/useInView";
 
 export default function Hero() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden max-h-screen">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden sm:max-h-screen">
+
       {/* Background image */}
       <Image
-        src="/hero.jpg" // 🔴 put your image in /public/hero.jpg
+        src="/hero.jpg"
         alt="Fire suppression and mechanical systems"
         fill
         priority
@@ -16,20 +22,16 @@ export default function Hero() {
       />
 
       {/* Dark gradient overlay */}
-      <div
-        className="absolute inset-0 bg-linear-to-br
-from-[hsl(20_45%_12%)]/95
-via-[hsl(20_35%_22%)]/90
-to-[hsl(210_25%_30%)]/70
-"
-      />
+      <div className="absolute inset-0 bg-linear-to-br from-[hsl(20_45%_12%)]/95 via-[hsl(20_35%_22%)]/90 to-[hsl(210_25%_30%)]/70" />
+
 
       {/* Content */}
       <div className="relative z-10 w-full flex justify-content-around">
-        <div className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
           <div className="max-w-3xl text-white">
             {/* Top label */}
-            <div className="mb-6 flex items-center gap-4 text-xs uppercase tracking-widest text-[#c88a4a] font-serif">
+            <div className="mb-6 flex flex-wrap items-center gap-3 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-[#c88a4a] font-serif">
+
               <span className="h-px w-12 bg-[#c88a4a]" />
               Metro Detroit’s Trusted Experts
             </div>
@@ -37,7 +39,7 @@ to-[hsl(210_25%_30%)]/70
             {/* Headline */}
             <h1 className="text-4xl font-medium font-sans-400 leading-[1.05] sm:text-3xl md:text-5xl lg:text-6xl">
               FIRE SUPPRESSION & <br />
-              <span className="text-[#c88a4a]">COMMERCIAL MECHANICAL</span>{" "}
+              <span className="text-[#c88a4a]">COMMERCIAL MECHANICAL</span>
               <br />
               SPECIALISTS
             </h1>
@@ -66,8 +68,18 @@ to-[hsl(210_25%_30%)]/70
               </Link>
             </div>
 
-            {/* Trust indicators */}
-            <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-8 text-sm text-white/80 font-serif">
+            {/* Trust indicators (animated on scroll) */}
+            <div
+              ref={ref}
+              className={`mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-8 text-sm text-white/80 font-serif
+                transition-all duration-700 ease-out
+                ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }
+              `}
+            >
               <div className="flex items-center gap-2">
                 <IoShieldOutline className="text-lg" />
                 <span>Licensed & Insured</span>
