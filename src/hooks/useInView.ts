@@ -5,17 +5,20 @@ export function useInView(threshold = 0.2) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // animate once
+          observer.unobserve(el); // animate once
         }
       },
       { threshold }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(el);
 
     return () => observer.disconnect();
   }, [threshold]);
