@@ -4,14 +4,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoShieldOutline, IoTimeOutline } from "react-icons/io5";
 import { PiMedalThin } from "react-icons/pi";
-import { useInView } from "@/hooks/useInView";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
-  const { ref, isVisible } = useInView();
+  // Hero load animation
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Trust section scroll animation
+  const trustRef = useRef<HTMLDivElement | null>(null);
+  const [trustVisible, setTrustVisible] = useState(false);
+
+  // Page-load animation (hero)
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  // Scroll animation (trust indicators)
+  useEffect(() => {
+    const el = trustRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTrustVisible(true);
+          observer.unobserve(el); // animate once
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden sm:max-h-screen">
-
       {/* Background image */}
       <Image
         src="/hero.jpg"
@@ -24,20 +57,27 @@ export default function Hero() {
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-linear-to-br from-[hsl(20_45%_12%)]/95 via-[hsl(20_35%_22%)]/90 to-[hsl(210_25%_30%)]/70" />
 
-
       {/* Content */}
       <div className="relative z-10 w-full flex justify-content-around">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
           <div className="max-w-3xl text-white">
             {/* Top label */}
             <div className="mb-6 flex flex-wrap items-center gap-3 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-[#c88a4a] font-serif">
-
               <span className="h-px w-12 bg-[#c88a4a]" />
               Metro Detroit’s Trusted Experts
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl font-medium font-sans-400 leading-[1.05] sm:text-3xl md:text-5xl lg:text-6xl">
+            {/* Headline (ON LOAD) */}
+            <h1
+              className={`text-4xl font-medium font-sans-400 leading-[1.05] sm:text-3xl md:text-5xl lg:text-6xl
+                transition-all duration-900 ease-out
+                ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }
+              `}
+            >
               FIRE SUPPRESSION & <br />
               <span className="text-[#c88a4a]">COMMERCIAL MECHANICAL</span>
               <br />
@@ -68,13 +108,13 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Trust indicators (animated on scroll) */}
+            {/* Trust indicators (ON SCROLL) */}
             <div
-              ref={ref}
+              ref={trustRef}
               className={`mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-8 text-sm text-white/80 font-serif
                 transition-all duration-700 ease-out
                 ${
-                  isVisible
+                  trustVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
                 }

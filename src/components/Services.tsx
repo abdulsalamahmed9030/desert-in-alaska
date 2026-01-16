@@ -6,17 +6,19 @@ import { Flame, Wind, Utensils, Fuel, Factory } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 export default function Services() {
-  const { ref, isVisible } = useInView(0.15);
+  const { ref, isVisible } = useInView(0.3); // slightly stricter trigger
 
   return (
     <section className="bg-[#eeebe8] py-24">
+      {/* 🔥 SCROLL TRIGGER (this is the key) */}
+      <div ref={ref} className="h-1 w-full" />
+
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div
-          ref={ref}
-          className={`text-center transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`text-center transition-all duration-700 ease-out
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+          `}
         >
           <p className="text-xs uppercase tracking-widest text-[#8b5428] font-serif">
             What We Do
@@ -32,9 +34,9 @@ export default function Services() {
 
         {/* Featured Service */}
         <div
-          className={`mt-16 overflow-hidden rounded-2xl relative transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mt-16 overflow-hidden rounded-2xl relative transition-all duration-700 ease-out
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+          `}
         >
           <Image
             src="/fire.jpg"
@@ -76,41 +78,44 @@ export default function Services() {
 
         {/* Services Grid */}
         <div
-          className={`mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-700 ease-out
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+          `}
         >
           {[
             {
               icon: <Wind />,
               title: "Heating & Cooling (HVAC)",
               image: "/hvac.jpg",
-              text: "Residential and light commercial HVAC services including installation, repair, replacement, and maintenance.",
+              text:
+                "Residential and light commercial HVAC services including installation, repair, replacement, and maintenance.",
             },
             {
               icon: <Utensils />,
               title: "Commercial Kitchen Exhaust",
               image: "/kitchen.jpg",
-              text: "Kitchen exhaust hood installation and servicing. Complete system support for commercial kitchens.",
+              text:
+                "Kitchen exhaust hood installation and servicing. Complete system support for commercial kitchens.",
             },
             {
               icon: <Fuel />,
               title: "Gas Piping & Mechanical",
               image: "/gas.jpg",
-              text: "Commercial gas piping, tenant improvements, and system modifications for commercial facilities.",
+              text:
+                "Commercial gas piping, tenant improvements, and system modifications for commercial facilities.",
             },
             {
               icon: <Factory />,
               title: "Industrial Dry Chemical Systems",
               image: "/industrial.jpg",
-              text: "Dry chemical fire suppression systems for collision shops and industrial paint booths.",
+              text:
+                "Dry chemical fire suppression systems for collision shops and industrial paint booths.",
             },
           ].map((item, i) => (
             <div
               key={i}
               className="rounded-2xl bg-white overflow-hidden shadow-sm hover:shadow-md transition"
             >
-              {/* Image + Icon */}
               <div className="relative h-48">
                 <Image
                   src={item.image}
@@ -118,23 +123,17 @@ export default function Services() {
                   fill
                   className="object-cover"
                 />
-
-                {/* WHITE FADE (REFERENCE STYLE) */}
                 <div className="absolute inset-0 bg-linear-to-t from-white via-white/70 to-transparent" />
-
-                {/* ICON ON IMAGE */}
                 <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#8b5428] text-white shadow-md">
                   {item.icon}
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-8 pt-6">
                 <h4 className="text-lg font-medium text-[#3b2a1f] font-sans-400">
                   {item.title}
                 </h4>
-
-                <p className="mt-3 text-sm text-[#6b5a4d] font-serif">
+                <p className="mt-3 text-sm text-[#876C61] font-serif">
                   {item.text}
                 </p>
               </div>
@@ -144,13 +143,13 @@ export default function Services() {
 
         {/* CTA */}
         <div
-          className={`mt-16 text-center transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`mt-16 text-center transition-all duration-700 ease-out
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+          `}
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 rounded-md border border-[#3b2a1f] px-8 py-4 text-sm font-semibold text-[#3b2a1f] hover:bg-[#3b2a1f] hover:text-white transition"
+            className="inline-flex items-center gap-2 rounded-md border-2 border-[#3b2a1f] px-8 py-4 text-sm font-semibold text-[#3b2a1f] hover:bg-[#3b2a1f] hover:text-white transition"
           >
             View All Services →
           </Link>
