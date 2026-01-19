@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
   { name: "Our Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
@@ -15,6 +16,9 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
@@ -33,20 +37,26 @@ export default function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-8 font-serif">
+          <nav className="hidden lg:flex items-center gap-2 font-serif">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-black hover:text-[#9b5d2e] transition"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
+                  ${
+                    isActive(link.href)
+                      ? "bg-[#86492D]/10 text-accent"
+                      : "text-accent hover:bg-[#86492D]/10"
+                  }
+                `}
               >
                 {link.name}
               </Link>
             ))}
 
             <Link
-              href="/quote"
-              className="rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white hover:bg-[#864f26] transition"
+              href="/contact"
+              className="ml-4 rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white hover:bg-[#86522d] transition"
             >
               Get a Quote
             </Link>
@@ -70,13 +80,19 @@ export default function Header() {
         }`}
       >
         <div className="border-t border-black/10 bg-white px-6 py-6 font-serif">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-black"
+                className={`rounded-md px-4 py-2 text-base font-medium transition-colors
+                  ${
+                    isActive(link.href)
+                      ? "bg-[#86492D]/10"
+                      : "hover:bg-[#86492D]/10"
+                  }
+                `}
               >
                 {link.name}
               </Link>
@@ -85,7 +101,7 @@ export default function Header() {
             <Link
               href="/quote"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
+              className="mt-3 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
             >
               Get a Quote
             </Link>

@@ -1,6 +1,8 @@
 
 import AboutUs from '@/components/AboutUs';
+import Contact from '@/components/Contact';
 import ContactBar from '@/components/ContactBar';
+// import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
@@ -15,6 +17,8 @@ export default function Page() {
       <ContactBar />
       <Services />
       <AboutUs />
+      <Contact />
+      {/* <Footer /> */}
     
       
     </>
