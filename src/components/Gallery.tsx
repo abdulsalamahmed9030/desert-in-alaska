@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
-import { title } from "process";
 
 const galleryItems = [
   {
@@ -60,8 +59,8 @@ export default function Gallery() {
             <div
               key={index}
               style={{ transitionDelay: `${index * 220}ms` }}
-              className={`group relative h-[260px] overflow-hidden rounded-2xl
-                transform transition-all duration-[1200ms] ease-out
+              className={`group relative h-65 overflow-hidden rounded-2xl
+                transform transition-all duration-1200 ease-out
                 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
@@ -79,7 +78,7 @@ export default function Gallery() {
               />
 
               {/* HOVER OVERLAY */}
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#271200] via-[#c98b55]/30 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#271200] via-[#c98b55]/30 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
                 <div className="p-7">
                   <p className="mb-1 text-xs tracking-widest text-[#c98b55] font-serif">
                     {item.tag}
