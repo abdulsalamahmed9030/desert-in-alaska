@@ -3,6 +3,7 @@ import AboutUs from '@/components/AboutUs';
 import Contact from '@/components/Contact';
 import ContactBar from '@/components/ContactBar';
 import Footer from '@/components/Footer';
+import Gallery from '@/components/Gallery';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
@@ -15,6 +16,7 @@ export default function Page() {
       <Header />
       <Hero />
       <ContactBar />
+      <Gallery />
       <Services />
       <AboutUs />
       <Contact />
