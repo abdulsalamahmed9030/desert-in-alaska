@@ -40,17 +40,20 @@ export default function Gallery() {
   const { ref, isVisible } = useInView(0.15);
 
   return (
-    <section className="bg-[#faf8f5] py-28">
+    <section className="bg-[#faf8f5] py-20">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* SECTION HEADER */}
         <div className="mb-20 text-center">
           <p className="text-xs uppercase tracking-widest text-[#8b5428] font-serif">
             Our Works
           </p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-medium text-[#3b2a1f]">
-            Our Projects
+          <h2 className="mt-4 text-4xl md:text-5xl leading-[1.01] text-[#3b2a1f]">
+            FEATURED PROJECTS
           </h2>
+          <p className="text-sm pt-4 text-[#8b5428] font-serif">
+            Explore our recent commercial and industrial installations across
+            Metro Detroit.
+          </p>
         </div>
 
         {/* GALLERY GRID */}
@@ -88,11 +91,9 @@ export default function Gallery() {
                   </h3>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

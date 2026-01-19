@@ -69,7 +69,7 @@ export default function AboutUs() {
           </p>
 
           <h2 className="mt-4 text-5xl leading-[1.01] text-[#432719] font-sans">
-            DECADES OF TRUSTED  <br />
+            DECADES OF TRUSTED <br />
             <span className="text-[#86522d]">EXPERTISE</span>
           </h2>
 

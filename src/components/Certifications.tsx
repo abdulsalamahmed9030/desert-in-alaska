@@ -12,7 +12,6 @@ export default function Certifications() {
   return (
     <section className="bg-[#432719] py-20">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* HEADING */}
         <h2 className="mb-12 text-center text-3xl md:text-4xl font-medium text-white tracking-wide">
           LICENSED &amp; CERTIFIED
@@ -32,7 +31,6 @@ export default function Certifications() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

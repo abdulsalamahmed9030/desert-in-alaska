@@ -3,7 +3,6 @@ export default function AboutPage() {
     <section className="bg-[#422517] py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
-
           {/* SMALL LABEL */}
           <p className="mb-2 text-xs uppercase tracking-widest text-[#a36a3a] font-serif">
             About Us
@@ -17,11 +16,10 @@ export default function AboutPage() {
 
           {/* DESCRIPTION */}
           <p className="mt-6 text-md leading-relaxed text-[#F7F5F3CC] font-serif font-light">
-            Since 1997, Desert In Alaska Corp has been Metro Detroit&apos;s trusted
-            provider of fire suppression systems, commercial HVAC, and
+            Since 1997, Desert In Alaska Corp has been Metro Detroit&apos;s
+            trusted provider of fire suppression systems, commercial HVAC, and
             mechanical services.
           </p>
-
         </div>
       </div>
     </section>
