@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import TopBar from '@/components/TopBar'
@@ -8,6 +9,7 @@ const page = () => {
     <>
     <TopBar />
      <Header /> 
+     <Contact />
      <Footer />
    </>
   )
