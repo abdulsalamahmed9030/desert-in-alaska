@@ -1,8 +1,11 @@
 import AboutPage from "@/components/AboutPage";
-import AboutUs from "@/components/AboutUs";
+
 import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OurJourney from "@/components/OurJourney";
+import OurStory from "@/components/OurStory";
+import OurValues from "@/components/OurValues";
 import TopBar from "@/components/TopBar";
 import React from "react";
 
@@ -12,7 +15,9 @@ const page = () => {
       <TopBar />
       <Header />
       <AboutPage />
-      <AboutUs />
+ <OurStory />
+ <OurValues />
+ <OurJourney />
       <Certifications />
       <Footer />
     </>
