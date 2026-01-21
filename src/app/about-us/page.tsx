@@ -15,9 +15,9 @@ const page = () => {
       <TopBar />
       <Header />
       <AboutPage />
- <OurStory />
- <OurValues />
- <OurJourney />
+      <OurStory />
+      <OurValues />
+      <OurJourney />
       <Certifications />
       <Footer />
     </>

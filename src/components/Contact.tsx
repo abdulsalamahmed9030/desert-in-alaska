@@ -63,57 +63,73 @@ export default function Contact() {
               Contact Information
             </h3>
 
-            <ul className="space-y-6 text-[#3a2418]">
+           <ul className="space-y-6 text-[#3a2418]">
 
-              {/* PHONE */}
-              <li className="flex items-start gap-4">
-                <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#8b7a6c]">Phone</p>
-                  <p className="font-medium">313-931-3070</p>
-                </div>
-              </li>
+  {/* PHONE */}
+  <li>
+    <a
+      href="tel:13139313070"
+      className="flex items-start gap-4 group"
+    >
+      <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D] transition group-hover:bg-[#86492D] group-hover:text-white">
+        <Phone size={20} />
+      </div>
+      <div>
+        <p className="text-sm text-[#8b7a6c]">Phone</p>
+        <p className="font-medium group-hover:underline">
+          313-931-3070
+        </p>
+      </div>
+    </a>
+  </li>
 
-              {/* EMAIL */}
-              <li className="flex items-start gap-4">
-                <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#8b7a6c]">Email</p>
-                  <p className="font-medium">desertinalaska@outlook.com</p>
-                </div>
-              </li>
+  {/* EMAIL */}
+  <li>
+    <a
+      href="mailto:desertinalaska@outlook.com"
+      className="flex items-start gap-4 group"
+    >
+      <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D] transition group-hover:bg-[#86492D] group-hover:text-white">
+        <Mail size={20} />
+      </div>
+      <div>
+        <p className="text-sm text-[#8b7a6c]">Email</p>
+        <p className="font-medium group-hover:underline break-all">
+          desertinalaska@outlook.com
+        </p>
+      </div>
+    </a>
+  </li>
 
-              {/* ADDRESS */}
-              <li className="flex items-start gap-4">
-                <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#8b7a6c]">Address</p>
-                  <p className="font-medium">
-                    11402 Schaefer Hwy, Detroit, MI 48227
-                  </p>
-                </div>
-              </li>
+  {/* ADDRESS (OPTIONAL MAP CTA) */}
+  <li className="flex items-start gap-4">
+  <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
+    <MapPin size={20} />
+  </div>
+  <div>
+    <p className="text-sm text-[#8b7a6c]">Address</p>
+    <p className="font-medium">
+      11402 Schaefer Hwy, Detroit, MI 48227
+    </p>
+  </div>
+</li>
 
-              {/* HOURS */}
-              <li className="flex items-start gap-4">
-                <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
-                  <Clock size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#8b7a6c]">Business Hours</p>
-                  <p className="font-medium">
-                    Mon – Sat, 8:00 AM – 6:00 PM
-                  </p>
-                </div>
-              </li>
 
-            </ul>
+  {/* HOURS (NO CTA) */}
+  <li className="flex items-start gap-4">
+    <div className="rounded-lg bg-[#86492D]/10 p-3 text-[#86492D]">
+      <Clock size={20} />
+    </div>
+    <div>
+      <p className="text-sm text-[#8b7a6c]">Business Hours</p>
+      <p className="font-medium">
+        Mon – Sat, 8:00 AM – 6:00 PM
+      </p>
+    </div>
+  </li>
+
+</ul>
+
           </div>
 
         </div>

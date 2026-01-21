@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+
 import { useInView } from "@/hooks/useInView";
 
 export default function AboutUs() {
@@ -101,17 +102,11 @@ export default function AboutUs() {
               <div
                 key={i}
                 className={`flex items-start gap-3 text-sm transition-all duration-500 ease-out
-                  ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
-                  }
-                `}
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+  `}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-[#86522d]">
-                  <Check size={12} className="text-[#86522d]" />
-                </div>
+                <IoMdCheckmarkCircleOutline className="mt-0.5 h-5 w-5 text-[#86522d] shrink-0" />
                 <span>{item}</span>
               </div>
             ))}

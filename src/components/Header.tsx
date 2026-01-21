@@ -74,40 +74,61 @@ export default function Header() {
       </div>
 
       {/* MOBILE MENU */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96" : "max-h-0"
-        }`}
-      >
-        <div className="border-t border-black/10 bg-white px-6 py-6 font-serif">
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`rounded-md px-4 py-2 text-base font-medium transition-colors
-                  ${
-                    isActive(link.href)
-                      ? "bg-[#86492D]/10"
-                      : "hover:bg-[#86492D]/10"
-                  }
-                `}
-              >
-                {link.name}
-              </Link>
-            ))}
+     {/* MOBILE MENU */}
+<div
+  className={`lg:hidden overflow-hidden transition-all duration-300 ${
+    open ? "max-h-96" : "max-h-0"
+  }`}
+>
+  <div className="border-t border-black/10 bg-white px-6 py-6 font-serif">
+    <div className="flex flex-col gap-3">
+      {navLinks.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          onClick={() => setOpen(false)}
+          className={`rounded-md px-4 py-2 text-base font-medium transition-colors
+            ${
+              isActive(link.href)
+                ? "bg-[#86492D]/10"
+                : "hover:bg-[#86492D]/10"
+            }
+          `}
+        >
+          {link.name}
+        </Link>
+      ))}
 
-            <Link
-              href="/quote"
-              onClick={() => setOpen(false)}
-              className="mt-3 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
-            >
-              Get a Quote
-            </Link>
-          </div>
-        </div>
+      <Link
+        href="/quote"
+        onClick={() => setOpen(false)}
+        className="mt-3 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
+      >
+        Get a Quote
+      </Link>
+
+      {/* CONTACT INFO */}
+      <div className="mt-6 border-t border-black/10 pt-4 text-sm text-[#432719]">
+        <a
+          href="tel:13139313070"
+          className="flex items-center gap-3 py-2"
+        >
+          <span className="font-medium">📞</span>
+          313-931-3070
+        </a>
+
+        <a
+          href="mailto:desertinalaska@outlook.com"
+          className="flex items-center gap-3 py-2"
+        >
+          <span className="font-medium">✉️</span>
+          desertinalaska@outlook.com
+        </a>
       </div>
+    </div>
+  </div>
+</div>
+
     </header>
   );
 }
