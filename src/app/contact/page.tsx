@@ -1,4 +1,6 @@
-import Contact from '@/components/Contact'
+
+import ContactPage from '@/components/ContactPage'
+import ContactUs from '@/components/ContactUs'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import TopBar from '@/components/TopBar'
@@ -9,7 +11,9 @@ const page = () => {
     <>
     <TopBar />
      <Header /> 
-     <Contact />
+     <ContactPage />
+     <ContactUs />
+ 
      <Footer />
    </>
   )
