@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useInView } from "@/hooks/useInView";
 
 const galleryItems = [
@@ -50,7 +51,7 @@ export default function Gallery() {
           <h2 className="mt-4 text-4xl md:text-5xl leading-[1.01] text-[#3b2a1f]">
             FEATURED PROJECTS
           </h2>
-          <p className="text-sm pt-4 text-[#8b5428] font-serif">
+          <p className="pt-4 text-sm text-[#8b5428] font-serif">
             Explore our recent commercial and industrial installations across
             Metro Detroit.
           </p>
@@ -86,13 +87,26 @@ export default function Gallery() {
                   <p className="mb-1 text-xs tracking-widest text-[#c98b55] font-serif">
                     {item.tag}
                   </p>
-                  <h3 className="text-lg font-medium text-white font-sans-400">
+                  <h3 className="text-lg font-medium text-white font-sans">
                     {item.title}
                   </h3>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA BUTTON */}
+        <div className="mt-20 flex justify-center">
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-3 rounded-xl border-2 border-[#3b2a1f] px-10 py-4 font-serif font-semibold text-[#3b2a1f] transition-all duration-300 hover:bg-[#3b2a1f] hover:text-white"
+          >
+            View All Projects
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
         </div>
       </div>
     </section>
