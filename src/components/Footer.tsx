@@ -7,7 +7,10 @@ import {
   Clock,
   ShieldCheck,
   BadgeCheck,
+  Facebook,
+  Instagram,
 } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -89,6 +92,7 @@ export default function Footer() {
         {/* CONTACT */}
         <div>
           <h4 className="mb-6 text-lg font-medium font-sans">Contact Us</h4>
+
           <ul className="space-y-4 text-sm text-[#e7d6c8] font-serif">
             <li className="flex items-start gap-3">
               <MapPin size={18} className="mt-1 text-[#c98b55]" />
@@ -98,8 +102,12 @@ export default function Footer() {
                 Detroit, MI 48227
               </span>
             </li>
+
             <li>
-              <a href="tel:13139313070" className="flex items-center gap-3">
+              <a
+                href="tel:13139313070"
+                className="flex items-center gap-3 hover:text-white transition"
+              >
                 <Phone size={18} className="text-[#c98b55]" />
                 <span>313-931-3070</span>
               </a>
@@ -108,7 +116,7 @@ export default function Footer() {
             <li>
               <a
                 href="mailto:desertinalaska@outlook.com"
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 hover:text-white transition"
               >
                 <Mail size={18} className="text-[#c98b55]" />
                 <span>desertinalaska@outlook.com</span>
@@ -120,6 +128,33 @@ export default function Footer() {
               <span>Mon – Sat, 8:00 AM – 6:00 PM</span>
             </li>
           </ul>
+
+          {/* SOCIAL ICONS */}
+          <div className="mt-6 flex items-center gap-4">
+            <a
+              href="https://www.facebook.com/people/Desert-in-Alaska/100070081153037/#"
+              aria-label="Facebook"
+              className="rounded-md bg-white/10 p-2 text-[#c98b55] transition hover:bg-white/20 hover:text-white"
+            >
+              <Facebook size={18} />
+            </a>
+
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="rounded-md bg-white/10 p-2 text-[#c98b55] transition hover:bg-white/20 hover:text-white"
+            >
+              <Instagram size={18} />
+            </a>
+
+            <a
+              href="https://x.com/desertinalaska1"
+              aria-label="X (Twitter)"
+              className="rounded-md bg-white/10 p-2 text-[#c98b55] transition hover:bg-white/20 hover:text-white"
+            >
+              <X size={18} />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -127,7 +162,10 @@ export default function Footer() {
       <div className="border-t border-white/10 font-serif">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-[#d8c2b1]">
           <p>© 2026 Desert In Alaska Corp. All rights reserved.</p>
-          <p>www.desertinalaska.com</p>
+
+          <Link href="/" className="hover:text-white transition">
+            www.desertinalaska.com
+          </Link>
         </div>
       </div>
     </footer>

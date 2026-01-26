@@ -138,7 +138,7 @@ export default function Services() {
               </p>
 
               <Link
-                href="/services/fire-suppression"
+                href="/services"
                 className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#8b5428] px-6 py-3 text-sm font-semibold hover:bg-[#73431f] transition"
               >
                 Learn More →

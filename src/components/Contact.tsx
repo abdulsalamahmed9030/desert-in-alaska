@@ -40,7 +40,7 @@ export default function Contact() {
             </p>
 
             <Link
-              href="/quote"
+              href="/contact"
               className="mt-10 inline-flex items-center gap-2 rounded-md bg-[#9b5d2e] px-6 py-3 text-sm font-semibold text-white hover:bg-[#864f26] transition font-serif"
             >
               Get a Free Quote

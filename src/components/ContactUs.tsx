@@ -34,7 +34,7 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
-                      placeholder="(313) 555-0123"
+                      placeholder="(313) 6543210"
                       className="w-full rounded-md border border-[#e5ded8] px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#86522d]"
                     />
                   </div>
