@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProjectCTA() {
   return (
-    <section className="bg-[#eeebe8] py-28">
+    <section className="bg-[#eeebe8] py-20">
       <div className="mx-auto max-w-4xl px-6 text-center">
         {/* HEADING */}
         <h2 className="text-4xl md:text-5xl font-sans font-medium tracking-wide text-[#3b2a1f]">
@@ -13,8 +13,8 @@ export default function ProjectCTA() {
 
         {/* SUBTEXT */}
         <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg font-serif leading-relaxed text-[#7a6a5c]">
-          Let&apos;s discuss your fire suppression, HVAC, or commercial mechanical
-          needs. Contact us for a free consultation.
+          Let&apos;s discuss your fire suppression, HVAC, or commercial
+          mechanical needs. Contact us for a free consultation.
         </p>
 
         {/* CTA BUTTON */}

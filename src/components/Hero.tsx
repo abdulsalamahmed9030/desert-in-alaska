@@ -35,7 +35,7 @@ export default function Hero() {
           observer.unobserve(el); // animate once
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(el);
@@ -101,7 +101,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="/quote"
+                href="/contact"
                 className="rounded-md font-serif border border-white/60 px-8 py-4 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
               >
                 Request Quote

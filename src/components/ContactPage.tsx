@@ -1,11 +1,11 @@
 export default function ContactPage() {
   return (
-    <section className="bg-[#422517] py-24">
+    <section className="bg-[#422517] py-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
           {/* SMALL LABEL */}
           <p className="mb-2 text-xs uppercase tracking-widest text-[#a36a3a] font-serif">
-           Contact Us
+            Contact Us
           </p>
 
           {/* HEADING */}
@@ -16,7 +16,8 @@ export default function ContactPage() {
 
           {/* DESCRIPTION */}
           <p className="mt-6 text-md leading-relaxed text-[#F7F5F3CC] font-serif font-light">
-            Ready to discuss your project? Contact us today for a free consultation and quote.
+            Ready to discuss your project? Contact us today for a free
+            consultation and quote.
           </p>
         </div>
       </div>

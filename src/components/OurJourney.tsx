@@ -29,7 +29,6 @@ export default function OurJourney() {
   return (
     <section className="bg-[#faf8f5] py-14">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* SECTION TITLE */}
         <h2 className="mb-16 text-center text-4xl md:text-5xl font-sans text-[#3b2a1f]">
           OUR JOURNEY
@@ -37,14 +36,12 @@ export default function OurJourney() {
 
         {/* TIMELINE */}
         <div className="relative mx-auto max-w-xl">
-
           {/* VERTICAL LINE */}
           <div className="absolute left-1.5 top-0 h-full w-px bg-[#e2d9cf]" />
 
           <ul className="space-y-10">
             {timeline.map((item, index) => (
               <li key={index} className="relative pl-16">
-
                 {/* DOT */}
                 <span className="absolute left-0 top-1 h-3.5 w-3.5 rounded-full bg-[#8b5428]" />
 
@@ -55,12 +52,10 @@ export default function OurJourney() {
                 <p className="mt-2 text-base text-[#3b2a1f] font-serif">
                   {item.text}
                 </p>
-
               </li>
             ))}
           </ul>
         </div>
-
       </div>
     </section>
   );

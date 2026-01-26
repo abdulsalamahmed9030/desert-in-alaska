@@ -24,7 +24,6 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
-
           {/* LOGO */}
           <Link href="/" className="flex items-center">
             <Image
@@ -74,61 +73,57 @@ export default function Header() {
       </div>
 
       {/* MOBILE MENU */}
-     {/* MOBILE MENU */}
-<div
-  className={`lg:hidden overflow-hidden transition-all duration-300 ${
-    open ? "max-h-130" : "max-h-0"
-  }`}
->
-  <div className="border-t border-black/10 bg-white px-6 py-6 font-serif">
-    <div className="flex flex-col gap-3">
-      {navLinks.map((link) => (
-        <Link
-          key={link.name}
-          href={link.href}
-          onClick={() => setOpen(false)}
-          className={`rounded-md px-4 py-2 text-base font-medium transition-colors
-            ${
-              isActive(link.href)
-                ? "bg-[#86492D]/10"
-                : "hover:bg-[#86492D]/10"
-            }
-          `}
-        >
-          {link.name}
-        </Link>
-      ))}
-
-      <Link
-        href="/quote"
-        onClick={() => setOpen(false)}
-        className="mt-3 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
+      {/* MOBILE MENU */}
+      <div
+        className={`lg:hidden absolute left-0 top-20 w-full bg-white z-50
+    transition-all duration-300 ease-in-out
+    ${open ? "opacity-100 visible" : "opacity-0 invisible"}
+  `}
       >
-        Get a Quote
-      </Link>
+        <div className="border-t border-black/10 bg-white px-6 py-6 font-serif">
+          <div className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`rounded-md px-4 py-2 text-base font-medium transition-colors
+            ${isActive(link.href) ? "bg-[#86492D]/10" : "hover:bg-[#86492D]/10"}
+          `}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-      {/* CONTACT INFO */}
-      <div className="mt-6 border-t border-black/10 pt-4 text-sm text-[#432719]">
-        <a
-          href="tel:13139313070"
-          className="flex items-center gap-3 py-2"
-        >
-          <span className="font-medium">📞</span>
-          313-931-3070
-        </a>
+            <Link
+              href="/quote"
+              onClick={() => setOpen(false)}
+              className="mt-3 inline-flex w-fit rounded-md bg-[#9b5d2e] px-5 py-2 text-sm font-semibold text-white"
+            >
+              Get a Quote
+            </Link>
 
-        <a
-          href="mailto:desertinalaska@outlook.com"
-          className="flex items-center gap-3 py-2"
-        >
-          <span className="font-medium">✉️</span>
-          desertinalaska@outlook.com
-        </a>
+            {/* CONTACT INFO */}
+            <div className="mt-6 border-t border-black/10 pt-4 text-sm text-[#432719]">
+              <a
+                href="tel:13139313070"
+                className="flex items-center gap-3 py-2"
+              >
+                <span className="font-medium">📞</span>
+                313-931-3070
+              </a>
+
+              <a
+                href="mailto:desertinalaska@outlook.com"
+                className="flex items-center gap-3 py-2"
+              >
+                <span className="font-medium">✉️</span>
+                desertinalaska@outlook.com
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
     </header>
   );
 }

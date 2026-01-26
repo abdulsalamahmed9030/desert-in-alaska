@@ -81,87 +81,82 @@ const services = [
       "System maintenance and inspection",
     ],
   },
-
-  // --- You can edit these later if needed ---
-  
- 
- 
 ];
 
 export default function ServiceCard() {
   return (
-    <>
-      {services.map((service, index) => {
-        const isImageLeft = index % 2 === 0;
-        const Icon = service.icon;
+    <section className="bg-[#faf8f5] py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
+        {services.map((service, index) => {
+          const isImageLeft = index % 2 === 0;
+          const Icon = service.icon;
 
-        return (
-          <section key={index} className="bg-[#faf8f5] py-16">
-            <div className="mx-auto max-w-7xl px-4">
-              <div className="grid items-center gap-12 lg:grid-cols-2">
-                {isImageLeft && (
-                  <div className="relative h-84 overflow-hidden rounded-2xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-                {/* CONTENT */}
-                <div>
-                  <span className="inline-flex items-center font-serif gap-2 rounded-full px-4 py-1.5 text-md font-medium text-[#7b4a2d]">
-                    <div className="bg-[#efe7de] p-4 rounded-md">
-                      <Icon className="h-6 w-6 " />
-                    </div>
-                    {service.badge}
+          return (
+            <div
+              key={index}
+              className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
+            >
+              {/* IMAGE */}
+              <div
+                className={`relative w-full overflow-hidden rounded-2xl
+                h-64 sm:h-80 md:h-105
+                order-1 ${isImageLeft ? "lg:order-1" : "lg:order-2"}`}
+              >
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div
+                className={`order-2 max-w-xl
+                ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}
+              >
+                {/* BADGE */}
+                <div className="inline-flex items-center gap-3 font-serif text-sm sm:text-base font-medium text-[#7b4a2d]">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#efe7de]">
+                    <Icon className="h-6 w-6 shrink-0 text-[#7b4a2d]" />
                   </span>
-
-                  <h2 className="mt-5 text-3xl font-sans text-[#2b1a12]">
-                    {service.title}
-                  </h2>
-
-                  <p className="mt-4 max-w-xl text-base font-serif leading-relaxed text-[#5a4a42]">
-                    {service.description}
-                  </p>
-
-                   <ul className="mt-6 space-y-4 font-serif">
-                    {service.points.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <IoMdCheckmarkCircleOutline
-                          className="mt-0.5 h-5 w-5 text-[#86522d]"
-                        />
-                        <span className="text-sm leading-relaxed text-[#3f3029]">
-                          {point}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href="#"
-                    className="mt-8 inline-flex items-center gap-3 rounded-md bg-[#3b2416] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2a180f]"
-                  >
-                    Request Service <span className="text-lg">→</span>
-                  </Link>
+                  {service.badge}
                 </div>
 
-                {!isImageLeft && (
-                  <div className="relative h-84 overflow-hidden rounded-2xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
+                <h2 className="mt-4 text-2xl sm:text-3xl font-sans text-[#2b1a12]">
+                  {service.title}
+                </h2>
+
+                <p className="mt-4 text-sm sm:text-base font-serif leading-relaxed text-[#5a4a42]">
+                  {service.description}
+                </p>
+
+                {/* POINTS */}
+                <ul className="mt-6 space-y-3 sm:space-y-4 font-serif">
+                  {service.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
+                        <IoMdCheckmarkCircleOutline className="h-5 w-5 shrink-0 text-[#86522d]" />
+                      </span>
+                      <span className="text-sm leading-relaxed text-[#3f3029]">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="mt-7 inline-flex items-center gap-3 rounded-md bg-[#3b2416] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2a180f]"
+                >
+                  Request Service <span className="text-lg">→</span>
+                </Link>
               </div>
             </div>
-          </section>
-        );
-      })}
-    </>
+          );
+        })}
+      </div>
+    </section>
   );
 }

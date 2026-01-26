@@ -82,7 +82,7 @@ export default function Projects() {
   const { ref, isVisible } = useInView(0.15);
 
   return (
-    <section className="bg-[#faf8f5] py-20">
+    <section className="bg-[#faf8f5] py-16">
       <div className="mx-auto max-w-7xl px-6">
         {/* HEADER */}
         <div className="mb-20 text-center">
@@ -99,10 +99,7 @@ export default function Projects() {
         </div>
 
         {/* PROJECT GRID */}
-        <div
-          ref={ref}
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div ref={ref} className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <article
               key={index}

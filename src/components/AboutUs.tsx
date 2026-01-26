@@ -114,7 +114,7 @@ export default function AboutUs() {
 
           {/* CTA */}
           <Link
-            href="/about"
+            href="/about-us"
             className={`mt-12 inline-flex items-center gap-3 rounded-md bg-[#432719] px-8 py-4 text-sm font-semibold text-white hover:bg-[#2f1b12] font-serif
     transition-all duration-700 ease-out delay-300
     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}

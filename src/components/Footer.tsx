@@ -98,25 +98,22 @@ export default function Footer() {
                 Detroit, MI 48227
               </span>
             </li>
-           <li>
-  <a
-    href="tel:13139313070"
-    className="flex items-center gap-3"
-  >
-    <Phone size={18} className="text-[#c98b55]" />
-    <span>313-931-3070</span>
-  </a>
-</li>
+            <li>
+              <a href="tel:13139313070" className="flex items-center gap-3">
+                <Phone size={18} className="text-[#c98b55]" />
+                <span>313-931-3070</span>
+              </a>
+            </li>
 
-<li>
-  <a
-    href="mailto:desertinalaska@outlook.com"
-    className="flex items-center gap-3"
-  >
-    <Mail size={18} className="text-[#c98b55]" />
-    <span>desertinalaska@outlook.com</span>
-  </a>
-</li>
+            <li>
+              <a
+                href="mailto:desertinalaska@outlook.com"
+                className="flex items-center gap-3"
+              >
+                <Mail size={18} className="text-[#c98b55]" />
+                <span>desertinalaska@outlook.com</span>
+              </a>
+            </li>
 
             <li className="flex items-center gap-3">
               <Clock size={18} className="text-[#c98b55]" />

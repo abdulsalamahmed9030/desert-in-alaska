@@ -41,7 +41,7 @@ export default function Gallery() {
   const { ref, isVisible } = useInView(0.15);
 
   return (
-    <section className="bg-[#faf8f5] py-20">
+    <section className="bg-[#faf8f5] pt-12">
       <div className="mx-auto max-w-7xl px-6">
         {/* SECTION HEADER */}
         <div className="mb-20 text-center">

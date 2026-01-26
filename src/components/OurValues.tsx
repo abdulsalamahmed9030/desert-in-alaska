@@ -2,9 +2,8 @@ import { ShieldCheck, Award, Users, Target } from "lucide-react";
 
 export default function OurValues() {
   return (
-    <section className="bg-[#eeebe8] py-28">
+    <section className="bg-[#eeebe8] py-20">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* SECTION HEADER */}
         <div className="mb-20 text-center">
           <h2 className="text-3xl md:text-4xl text-[#3b2a1f] font-sans">
@@ -17,7 +16,6 @@ export default function OurValues() {
 
         {/* VALUES GRID */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          
           {/* CARD 1 */}
           <div className="rounded-2xl bg-white p-8 shadow-sm">
             <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#f4efe9] text-[#8b5428]">
@@ -69,7 +67,6 @@ export default function OurValues() {
               Attention to detail in every aspect of our work.
             </p>
           </div>
-
         </div>
       </div>
     </section>

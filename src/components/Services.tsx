@@ -10,33 +10,29 @@ const services = [
     icon: <Wind />,
     title: "Heating & Cooling (HVAC)",
     image: "/hvac.jpg",
-    text:
-      "Residential and light commercial HVAC services including installation, repair, replacement, and maintenance.",
+    text: "Residential and light commercial HVAC services including installation, repair, replacement, and maintenance.",
   },
   {
     icon: <Utensils />,
     title: "Commercial Kitchen Exhaust",
     image: "/kitchen.jpg",
-    text:
-      "Kitchen exhaust hood installation and servicing. Complete system support for commercial kitchens.",
+    text: "Kitchen exhaust hood installation and servicing. Complete system support for commercial kitchens.",
   },
   {
     icon: <Fuel />,
     title: "Gas Piping & Mechanical",
     image: "/gas.jpg",
-    text:
-      "Commercial gas piping, tenant improvements, and system modifications for commercial facilities.",
+    text: "Commercial gas piping, tenant improvements, and system modifications for commercial facilities.",
   },
   {
     icon: <Factory />,
     title: "Industrial Dry Chemical Systems",
     image: "/industrial.jpg",
-    text:
-      "Dry chemical fire suppression systems for collision shops and industrial paint booths.",
+    text: "Dry chemical fire suppression systems for collision shops and industrial paint booths.",
   },
 ];
 
-function ServiceCard({ item }: { item: typeof services[number] }) {
+function ServiceCard({ item }: { item: (typeof services)[number] }) {
   const { ref, isVisible } = useInView(0.2);
 
   return (
@@ -68,9 +64,7 @@ function ServiceCard({ item }: { item: typeof services[number] }) {
         <h4 className="text-lg font-medium text-[#3b2a1f] font-sans-400">
           {item.title}
         </h4>
-        <p className="mt-3 text-sm text-[#876C61] font-serif">
-          {item.text}
-        </p>
+        <p className="mt-3 text-sm text-[#876C61] font-serif">{item.text}</p>
       </div>
     </div>
   );
